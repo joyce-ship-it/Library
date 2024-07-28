@@ -1,13 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <title>Library</title>
     <link rel="stylesheet" href="./styles.css">
     <script src="./index.js" defer></script>
 </head>
+
 <body>
-    
+    <h1>Library</h1>
+
+    <button class="addBook">
+        <img src="./add-icon.svg" alt="">
+        <div>Add a book</div>
+    </button>
+
+    <dialog>
+        <form action="#" method="dialog" id="bookInfo">
+            <p>
+                <label for="title">TITLE</label>
+                <input type="text" name="title" id="title">
+            </p>
+            <p>
+                <label for="author">AUTHOR</label>
+                <input type="text" name="author" id="author">
+            </p>
+            <p>
+                <label for="pages">PAGES</label>
+                <input type="number" name="pages" id="pages" max="1000" min="10">
+            </p>
+            <p>
+                <label for="readStatus">READ
+                    <input type="checkbox" name="readStatus" id="readStatus">
+                </label>
+            </p>
+            <div>
+                <button class="OK" type="submit">OK</button>
+            </div>
+            <!-- <button class="cancel">cancel</button> -->
+        </form>
+        
+    </dialog>
+
+    <div class="container">
+    </div>
 </body>
+
 </html>

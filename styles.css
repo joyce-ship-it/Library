@@ -1,0 +1,158 @@
+.lobster-regular {
+    font-family: "Lobster", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+*{
+    box-sizing: border-box;
+    margin:0px;
+    padding:0px;
+    background-color: #d4d4d4;
+}
+
+h1{
+    height: 15vh;
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lobster", Verdana, Geneva, Tahoma, sans-serif;
+    background: #ef4444;
+    color:#fee2e2 ;
+}
+
+img{
+    height:1.5rem;
+    width:1.5rem;
+}
+.addBook{
+    max-width:12rem;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    gap:1rem;
+    padding: 10px 20px;
+    color:white;
+    background-color: rgb(68, 0, 255);
+    outline:none;
+    border:none;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    margin-left:1.2rem;
+}
+.addBook:hover{
+    cursor:pointer;
+    box-shadow: 1px 2px  #0ea5e9;
+}
+.addBook > *{
+    background-color: rgb(68, 0, 255);
+}
+
+.container{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap:1rem;
+    padding:1rem;
+}
+
+.container > div{
+   
+    background-color: #bae6fd;
+    color:#083344;
+    box-shadow: 1px 2px #38bdf8;
+    border-radius: .3rem;
+    font-size: 1.2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 1rem;
+    max-width:200px;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:1rem;
+}
+
+.container > div > *{
+    background-color: #bae6fd;
+    color:#083344;
+}
+
+dialog{
+    height: 55vh;
+    width:400px;
+    padding: 1rem;
+    margin:auto;
+}
+dialog::backdrop{
+    background: linear-gradient(90deg, crimson , greenyellow, lightblue);
+    opacity: 0.5;
+}
+
+.readStatus, .remove{
+    padding:.5rem .8rem;
+    font-size: .8rem;
+}
+
+.container > div > .remove{
+    color:red;
+    border:1px solid red;
+}
+.remove:hover{
+    background-color: #f48e8e;
+}
+
+button{
+    cursor:pointer;
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+    gap:2rem;
+    padding-top:.5rem
+}
+p{
+    display: flex;
+    gap:1rem;
+    position:relative;
+}
+label{
+    position:absolute;
+    font-size: .9rem;
+    top:-16px;
+}
+input{
+    padding:.8rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border:none;
+    background-color: #38bdf8;
+    border-radius: .5rem;
+}
+input:focus{
+    box-shadow: 1px 2px black;
+    font-weight: bold;
+}
+input[type="text"]{
+    width: 78%;
+}
+input[type = "checkbox"]{
+    vertical-align: -3px;
+}
+.OK{
+    width:4.4rem;
+    height:2.5rem;
+    padding:5px 10px;
+    text-align: center;
+    font-family: bold;
+    font-size:1.2rem;
+    background-color: #0ea5e9;
+    color:whitesmoke;
+    border:none;
+    border-radius: .5rem;
+}
+.OK:hover{
+    box-shadow: #083344 1px 2px;
+}
