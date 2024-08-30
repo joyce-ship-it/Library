@@ -105,6 +105,7 @@ dialog::backdrop{
 
 button{
     cursor:pointer;
+    border:.5rem;
 }
 
 form{
@@ -115,6 +116,7 @@ form{
 }
 p{
     display: flex;
+    justify-content: space-evenly;
     gap:1rem;
     position:relative;
 }
@@ -122,6 +124,7 @@ label{
     position:absolute;
     font-size: .9rem;
     top:-16px;
+    left:3.5rem;
 }
 input{
     padding:.8rem;
@@ -138,10 +141,13 @@ input:focus{
 input[type="text"]{
     width: 78%;
 }
+input[type="number"]{
+    width:78%;
+}
 input[type = "checkbox"]{
     vertical-align: -3px;
 }
-.OK{
+.OK, .cancel{
     width:4.4rem;
     height:2.5rem;
     padding:5px 10px;
@@ -153,6 +159,24 @@ input[type = "checkbox"]{
     border:none;
     border-radius: .5rem;
 }
-.OK:hover{
+.OK:hover, .cancel:hover{
     box-shadow: #083344 1px 2px;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+input:invalid {
+    border-color: #900;
+    background-color: #fdd;
+  }
+
+.error {
+    width: inherit;
+    color:#ef4444;
+    position :absolute;
+    font-size: .8rem;
+    left:3.5rem;
+    top:2.5rem;
+    background:#fee2e2;
 }

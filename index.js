@@ -1,10 +1,3 @@
-// function Book(title, author, pages, readStatus) {
-//         this.title = title,
-//         this.author = author,
-//         this.pages = pages,
-//         this.readStatus = readStatus
-// }
-
 class Book{
     constructor(title, author, pages, readStatus){
         this.title = title;
@@ -13,16 +6,46 @@ class Book{
         this.readStatus = readStatus;
     }
 }
-const myLibrary = [];
 
+const myLibrary = [];
+const form = document.querySelector('form');
 const addBook = document.querySelector('.addBook');
 const dialog = document.querySelector('dialog');
 const OK = document.querySelector('.OK');
 const cancel = document.querySelector('.cancel');
-// cancel.addEventListener('click',()=> dialog.close());
-addBook.addEventListener('click', function (e) {
+
+cancel.addEventListener('click',()=> {
+    form.reset();
+    dialog.close();
+});
+addBook.addEventListener('click', () => {
     dialog.showModal();
 })
+
+function checkFilled(elementVal, errDisplay){
+    if(elementVal === ''){
+        errDisplay.textContent = 'Kindly enter the value';
+        console.log(errDisplay)
+        return false;
+    }
+    else{
+        errDisplay.textContent = "";
+        return true;
+    }
+    
+}
+function validatePages(pages, errorDisplay){
+    if(pages < 10){
+        errorDisplay.textContent = "Min number : 10";
+        return false;
+    }else if(pages > 1000){
+        errorDisplay.textContent = "Max number : 1000";
+        return false;
+    }else{
+        errorDisplay.textContent = "";
+        return true;
+    }
+}
 OK.addEventListener('click', function (e) {
     e.preventDefault();
     const form = document.querySelector('form');
@@ -30,10 +53,21 @@ OK.addEventListener('click', function (e) {
     const author =  form.elements.namedItem('author').value;
     const pages = form.elements.namedItem('pages').value;
     const readStatus  = form.elements.namedItem('readStatus').checked;
-    myLibrary.push(new Book(title, author, pages, readStatus));
-    form.reset();
-    dialog.close();
-    addBookToLibrary(myLibrary);
+    const errorTitle = document.querySelector('.error-title');
+    const errorAuthor = document.querySelector('.error-author');
+    const errorPages = document.querySelector('.error-pages');
+
+    const isAllFilled = checkFilled(title, errorTitle) 
+    && checkFilled(author, errorAuthor) 
+    && checkFilled(pages, errorPages)
+    && validatePages(pages,errorPages);
+    if(isAllFilled){
+        myLibrary.push(new Book(title, author, pages, readStatus));
+        form.reset();
+        dialog.close();
+        addBookToLibrary(myLibrary);
+    }
+    
 })
 
 

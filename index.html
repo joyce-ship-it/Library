@@ -21,30 +21,32 @@
     </button>
 
     <dialog>
-        <form action="#" method="dialog" id="bookInfo">
+        <form action="#" method="dialog" id="bookInfo" novalidate>
             <p>
                 <label for="title">TITLE</label>
-                <input type="text" name="title" id="title">
+                <input type="text" name="title" id="title" required>
+                <span class="error error-title"></span>
             </p>
             <p>
                 <label for="author">AUTHOR</label>
-                <input type="text" name="author" id="author">
+                <input type="text" name="author" id="author" required>
+                <span class="error error-author"></span>
             </p>
             <p>
                 <label for="pages">PAGES</label>
-                <input type="number" name="pages" id="pages" max="1000" min="10">
+                <input type="number" name="pages" id="pages" max="1000" min="10" required>
+                <span class="error error-pages"></span>
             </p>
             <p>
                 <label for="readStatus">READ
-                    <input type="checkbox" name="readStatus" id="readStatus">
+                    <input type="checkbox" name="readStatus" id="readStatus" >
                 </label>
             </p>
-            <div>
+            <div class="buttons">
                 <button class="OK" type="submit">OK</button>
+                <button class="cancel">Cancel</button>
             </div>
-            <!-- <button class="cancel">cancel</button> -->
         </form>
-        
     </dialog>
 
     <div class="container">
